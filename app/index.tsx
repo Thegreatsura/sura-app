@@ -11,21 +11,20 @@ import { useColorScheme } from "@/components/useColorScheme";
 import PrimaryButton from "@/components/PrimaryButton";
 import { useRouter } from "expo-router";
 
-const image = {
-  uri: "https://utfs.io/f/f0f92843-4d89-44df-b0c6-bbe77b890d55-r9smp.png",
-};
+const image = require("@/assets/images/home.png")
+
 
 const Index = () => {
   const colorScheme = useColorScheme();
   const router = useRouter();
 
   const onNavigation = () => {
-    router.replace("/login");
+    router.push("/screen01");
   };
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle={"light-content"} />
+      <StatusBar animated={true} />
       <ImageBackground source={image} style={styles.image}>
         <View style={styles.below} />
         <PrimaryButton

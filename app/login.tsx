@@ -11,6 +11,7 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useTheme } from "@react-navigation/native";
 import Icons from "@expo/vector-icons/MaterialIcons";
+import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from "@expo/vector-icons";
 // import Artwork03 from "../components/artworks/Artwork03";
 import { LOG_IN_SCREEN } from "../utils/constants";
@@ -79,6 +80,10 @@ const Login = () => {
             }}
           >
             {LOG_IN_SCREEN.description}
+
+            <TouchableOpacity style={{ marginLeft: 10 }} onPress={() => router.push("/help")}>
+              <AntDesign name="infocirlce" size={24} color="black" />
+            </TouchableOpacity> 
           </Text>
 
           <View style={{ alignItems: "center", gap: 16, marginTop: 32 }}>
@@ -87,11 +92,11 @@ const Login = () => {
               style={{ position: "relative", width: "100%" }}
             >
               <TextInput
-                placeholder="Telegram Id"
+                placeholder="TelegramId"
                 style={{
                   fontSize: 16,
                   fontWeight: "500",
-                  color: theme.colors.text,
+                  color: theme.dark ? '#626D77' : theme.colors.text,
                   paddingLeft: 48,
                   paddingRight: 12,
                   height: 48,
@@ -122,7 +127,7 @@ const Login = () => {
                 style={{
                   fontSize: 16,
                   fontWeight: "500",
-                  color: theme.colors.text,
+                  color: theme.dark ? '#626D77' : theme.colors.text,
                   paddingLeft: 48,
                   paddingRight: 12,
                   height: 48,
@@ -152,7 +157,7 @@ const Login = () => {
                 style={{
                   fontSize: 16,
                   fontWeight: "500",
-                  color: theme.colors.text,
+                  color: theme.dark ? '#626D77' : theme.colors.text,
                   paddingLeft: 48,
                   paddingRight: 12,
                   height: 48,
@@ -176,7 +181,7 @@ const Login = () => {
             <View
             //   entering={FadeInDown.delay(600).duration(1000).springify()}
             >
-              <PrimaryButton label="Log In" onPress={() => router.back()} />
+              <PrimaryButton label="Log In" onPress={() => router.push("/(tabs)")} />
             </View>
           </View>
         </View>

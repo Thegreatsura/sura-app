@@ -8,8 +8,11 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { Ionicons } from '@expo/vector-icons';
 
 import { useColorScheme } from "@/components/useColorScheme";
+import { TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -50,14 +53,32 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+  const router = useRouter();
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="help" options={{ presentation: "card" }} />
+        <Stack.Screen
+          name="help"
+          options={{ presentation: "card", headerShown: false }}
+        />
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="login" options={{ headerShown: false }} />
+        <Stack.Screen name="screen01" options={{ headerShown: false }} />
+        <Stack.Screen name="screen02" options={{ headerShown: false }} />
+        <Stack.Screen name="(myapp)/account" options={{ 
+           presentation: 'transparentModal',
+           animation: 'fade',
+           title: '',
+           headerTransparent: true,
+           headerLeft: () => null,
+           headerRight: () => (
+             <TouchableOpacity onPress={router.back} style={{ margin: 30}} >
+               <Ionicons name="close-outline" size={34} color={'#fff'} />
+             </TouchableOpacity>
+           ),
+        }} />
       </Stack>
     </ThemeProvider>
   );
