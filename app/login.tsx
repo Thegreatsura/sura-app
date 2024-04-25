@@ -25,7 +25,7 @@ const Login = () => {
   const router = useRouter();
 
   return (
-    <KeyboardAvoidingView behavior="position" style={{ flex: 1 }}>
+    <KeyboardAvoidingView behavior="padding" style={{ flex: 1 }}>
       <SafeAreaView
         style={{
           flex: 1,

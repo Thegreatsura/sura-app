@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Pressable } from "react-native";
 import React from "react";
 import { useRouter } from "expo-router";
 import { useTheme } from "@react-navigation/native";
@@ -20,9 +20,9 @@ const Help = () => {
             flexDirection: "row",
           }}
         >
-          <TouchableOpacity onPress={() => router.back()}>
+          <Pressable onPress={() => router.back()}>
             <Icons name="arrow-back-ios" size={24} color={theme.colors.text} />
-          </TouchableOpacity>
+          </Pressable>
         </View>
       <Text style={{ textAlign: "center", margin: "auto", alignItems: "center", justifyContent: "center" }}>user support page</Text>
     </View>

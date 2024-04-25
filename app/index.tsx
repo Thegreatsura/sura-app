@@ -1,18 +1,10 @@
-import {
-  View,
-  Text,
-  ImageBackground,
-  Image,
-  StatusBar,
-  StyleSheet,
-} from "react-native";
+import { View, Text, ImageBackground, Image, StyleSheet } from "react-native";
 import React from "react";
 import { useColorScheme } from "@/components/useColorScheme";
 import PrimaryButton from "@/components/PrimaryButton";
 import { useRouter } from "expo-router";
-
-const image = require("@/assets/images/home.png")
-
+import { StatusBar } from "expo-status-bar";
+import { hp, wp } from "@/utils/wp";
 
 const Index = () => {
   const colorScheme = useColorScheme();
@@ -24,15 +16,18 @@ const Index = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar animated={true} />
-      <ImageBackground source={image} style={styles.image}>
-        <View style={styles.below} />
-        <PrimaryButton
-          onPress={onNavigation}
-          label="Get started"
-          style={styles.button}
-        />
-      </ImageBackground>
+      <StatusBar animated={true} style="light" />
+      <Image
+        source={require("@/assets/images/home.png")}
+        style={styles.image}
+        resizeMode="cover"
+      />
+      <View style={styles.below} />
+      <PrimaryButton
+        onPress={onNavigation}
+        label="Get started"
+        style={styles.button}
+      />
     </View>
   );
 };
@@ -40,18 +35,19 @@ const Index = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column",
+    // flexDirection: "column",
   },
   image: {
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center",
+    width: wp(100),
+    height: hp(100),
   },
   button: {
     color: "dark",
     fontSize: 42,
     fontWeight: "bold",
-    textAlign: "center",
     margin: 15,
   },
   below: {

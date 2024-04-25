@@ -30,11 +30,10 @@ import { Ionicons } from "@expo/vector-icons";
 const Account = () => {
   return (
     <BlurView
-      intensity={80}
+      intensity={50}
       tint={"dark"}
       style={{ flex: 1, paddingTop: 100, backgroundColor: "rgba(0,0,0,0.5)" }}
-    >
-    </BlurView>
+    ></BlurView>
   );
 };
 

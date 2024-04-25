@@ -1,5 +1,4 @@
 import {
-  View,
   Text,
   TouchableOpacity,
   ViewStyle,
@@ -8,6 +7,7 @@ import {
 } from "react-native";
 import React from "react";
 import { useTheme } from "@react-navigation/native";
+import { customColor } from "@/constants/Colors";
 
 const PrimaryButton = ({
   onPress,
@@ -25,7 +25,7 @@ const PrimaryButton = ({
     <TouchableOpacity
       style={[
         {
-          backgroundColor: theme.colors.primary,
+          backgroundColor: customColor.RadiantOrange,
           paddingHorizontal: 32,
           height: 52,
           borderRadius: 100,

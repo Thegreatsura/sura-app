@@ -17,3 +17,10 @@ export default {
     tabIconSelected: tintColorDark,
   },
 };
+
+export const customColor = {
+  RadiantOrange: "#FF4F18",
+  FogGray: "#F2F4F7",
+  PureWhite: "#FFFFFF",
+  CoalBlack: "141517"
+}

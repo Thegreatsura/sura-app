@@ -1,4 +1,4 @@
-import Colors from "@/constants/Colors";
+import Colors, { customColor } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import {
   View,
@@ -28,22 +28,21 @@ const CustomHeader = () => {
           },
         ]}
       >
-        
         <View style={styles.circle}>
-          <Ionicons name={"card"} size={20} color="#FF4F18" />
+          <Ionicons name={"card"} size={20} color={customColor.CoalBlack} />
         </View>
-        
+
         <View style={styles.searchSection}>
           <Ionicons
             style={styles.searchIcon}
             name="search"
             size={20}
-            color="#FF4F18"
+            color={customColor.CoalBlack}
           />
           <TextInput
             style={styles.input}
             placeholder="Search"
-            placeholderTextColor="#FF4F18"
+            placeholderTextColor={customColor.CoalBlack}
           />
         </View>
         <Link href={"/(myapp)/account"} asChild>
@@ -52,12 +51,18 @@ const CustomHeader = () => {
               width: 40,
               height: 40,
               borderRadius: 20,
-              backgroundColor: "#FF4F18",
+              backgroundColor: customColor.FogGray,
               justifyContent: "center",
               alignItems: "center",
             }}
           >
-            <Text style={{ color: "#fff", fontWeight: "500", fontSize: 16 }}>
+            <Text
+              style={{
+                color: customColor.RadiantOrange,
+                fontWeight: "500",
+                fontSize: 16,
+              }}
+            >
               SG
             </Text>
           </TouchableOpacity>
@@ -73,16 +78,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  btn: {
-    padding: 10,
-    backgroundColor: "#FF4F18",
-  },
   searchSection: {
+    color: customColor.CoalBlack,
     flex: 1,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#FF4F18",
+    backgroundColor: customColor.FogGray,
     borderRadius: 30,
   },
   searchIcon: {
@@ -93,16 +95,16 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingRight: 10,
     paddingBottom: 10,
-    paddingLeft: 0,
-    backgroundColor: "#FF4F18",
-    color: "#FF4F18",
+    paddingLeft: 4,
+    backgroundColor: customColor.FogGray,
+    color: customColor.CoalBlack,
     borderRadius: 30,
   },
   circle: {
     width: 40,
     height: 40,
     borderRadius: 30,
-    backgroundColor: "#FF4F18",
+    backgroundColor: customColor.FogGray,
     justifyContent: "center",
     alignItems: "center",
   },

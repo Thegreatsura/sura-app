@@ -1,11 +1,8 @@
 import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
-
-import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
+import { AntDesign } from '@expo/vector-icons';
 import { BlurView } from 'expo-blur';
 import CustomHeader from '@/components/CustomHeader';
 import { Ionicons } from '@expo/vector-icons';
@@ -50,7 +47,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Chats',
-          tabBarIcon: ({ color, size }) => <Ionicons name="chatbox-ellipses-outline" size={size} color="#FF4F18" />,
+          tabBarIcon: ({ color, size }) => <Ionicons name="chatbox-ellipses-outline" size={size} color={color} />,
           header: () => <CustomHeader />,
           headerTransparent: true,
         }}
@@ -58,8 +55,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="two"
         options={{
-          title: 'User',
-          tabBarIcon: ({ color, size }) => <FontAwesome name="user-o" size={size} color="#FF4F18" />,
+          title: 'Settings',
+          tabBarIcon: ({ color, size }) => <AntDesign name="setting" size={size} color={color} />,
           header: () => <CustomHeader />,
           headerTransparent: true,
         }}
